@@ -5,25 +5,25 @@
         <div class="col-sm-4">
           <div class="item">
             <i class="fa fa-phone"></i>
-            <p>+ 886 2 7713 4333</p>
+            <p>+ 886 2 7746 4999</p>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="item">
             <i class="fa fa-building"></i>
-            <p>105 台北市松山區南京東路四段163號5樓</p>
+            <p>105 台北市松山區光復北路68號8樓之1</p>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="item">
             <i class="fa fa-envelope-o"></i>
-            <p>service@greattimemusic.com</p>
+            <p>xfzhi@luciditv.com</p>
           </div>
         </div>
       </div>
     </div>
     <div class="append">
-      <div class="container">© 2018, Great Time Music Co., Ltd. All Rights Reserved</div>
+      <div class="container">© 2019, Lucidity Media Co., Ltd. All Rights Reserved</div>
     </div>
   </div>
 </template>
@@ -66,5 +66,9 @@ export default {
   color: #fff;
   text-align: center;
   color: #6d6d6d;
+}
+
+.introduction {
+  color: #ffffff;
 }
 </style>

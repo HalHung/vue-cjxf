@@ -9,9 +9,10 @@
           <div class="row">
             <div class="col-md-6">
               <div class="para clearfix">
-                <h3>多變曲風 </h3>
-                <p class="mt-5">提供數十種音樂曲風</p>
-                <p class="mt-3"> 開啟一段心靈的旅程，搭乘多變的音樂風格: 爵士、搖滾 、民謠、R&B、抒情、吉他、鋼琴、電音、沙發音樂、中國風、管絃樂...，華麗呈現。</p>
+                <h3>三大功能 </h3>
+                <p class="mt-5">- 我的功課：聽帶、背書、誦經、開示影片，都可放入個人學習清單。</p>
+                <p class="mt-3">- 澈見學堂直播：法師開示、營隊課程、心靈提升，各種精彩內容都可以在澈見學堂直播中觀賞，即時學習。</p>
+                <p class="mt-3">- 增上生決定勝資料：師父音檔、老師開示、拜佛音檔、讚頌練習、四家合註、五大論攝類學、幸福十堂課，散落各地的資訊幫你整合起來，滿足你的精進行！</p>
               </div>
             </div>
             <div class="col-md-6"><img src="@/assets/img/index_headset.png"
@@ -20,14 +21,18 @@
         </div>
       </div>
       <vis></vis>
-      <music></music>
+      <!-- <music></music> -->
       <div class="section-surprise section  text-white px-5 py-5">
         <div class="bg"
           :style="{'background-image' : 'url(' + imgSurprise + ')'}"></div>
-        <div class="py-5 text-center para clearfix">
-          <h3 class="display-5">每月驚喜</h3>
-          <p class="mt-5">每月新曲上架</p>
-          <p class="mt-3">每月新的期待，新的聆聽經驗、新的視覺旅程</p>
+        <div class="py-5 para2 clearfix">
+            <h3 class="display-5">六大特色</h3>
+            <p class="mt-5">- 推播功能：即時資訊、最新消息不漏接！</p>
+            <p class="mt-3">- 影音資料：沒有聽到開示？沒有跟到直播？在這裡都幫您整理好了！</p>
+            <p class="mt-3">- 時間碼標記：方便操作，反覆聽聞更容易！</p>
+            <p class="mt-3">- 電子書：外出通勤，想誦經卻不方便帶書？電子書功能更方便隨時閱覽！</p>
+            <p class="mt-3">- 收藏最愛：依照自己的喜好收藏，幫助您隨時隨地都能精進用功，<br> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 而且最新上架的內容也會即時通知您，跟著幸福走！</p>
+            <p class="mt-3">- 聚沙成塔：業已造不失壞，直播不在現場也可以回饋心得，供養師長！</p>
         </div>
       </div>
       <price id="price-section"></price>
@@ -79,6 +84,15 @@ export default {
 }
 .para {
   padding: 2rem;
+}
+
+.para2 {
+  max-width: 700px;
+  padding-left: 3rem;
+  // margin-right: 200px;
   position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  // .background {
+  // }
 }
 </style>

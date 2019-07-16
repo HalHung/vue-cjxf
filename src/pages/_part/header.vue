@@ -5,7 +5,7 @@
       <router-link class="navbar-brand"
         :to="{path:'/'}"><img :src="logo"
           alt=""> </router-link>
-      <ul class="navbar-nav ml-auto">
+      <!-- <ul class="navbar-nav ml-auto">
         <li class="nav-item mr-3">
           <el-dropdown trigger="click"
             @command="handleCommand">
@@ -36,7 +36,7 @@
             </el-dropdown-menu>
           </el-dropdown>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </nav>
 </template>

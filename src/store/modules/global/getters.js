@@ -7,7 +7,8 @@
  */
 export const packs = (state) => {
   return [
-    ...state.totalPayList
+    ...state.packs
+    // ...state.totalPayList
   ]
 }
 export const monthPayList = (state) => {

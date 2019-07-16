@@ -31,7 +31,7 @@
             v-html="item.priceInfo"
           ></div>
           <div class="card-footer">
-          
+
             <button
               @click="selectPack(item.id)"
               :disabled="Object.keys(me).length > 0 && me.memberType.id != 1"
@@ -103,7 +103,7 @@ export default {
     toggleBuy () {
       this.$vuedals.open({
         name: 'upgrade',
-        title: '暢聽方案',
+        title: '方案',
         props: {
           planId: this.selected
         },

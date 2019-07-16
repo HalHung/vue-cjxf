@@ -7,29 +7,39 @@
 
 export default {
   packs: [{
-      amount: '0',
-      priceInfo: '免費試聽<br><small style="font-size:.9rem;color:#999;">每日三首</small>',
-      count: '0',
-      desc: 'FB、信箱註冊登錄<br>給您無限力量的好音樂',
-      id: '0',
-      name: '體驗會員',
-      type: 'normal'
-
+    id: 'starmusic_test',
+    product: 'starmusic_test',
+    dateCreated: '2019-05-30T17:42:44Z',
+    price: 90,
+    lastUpdated: '2019-05-30T17:42:44Z',
+    continuePrice: 90,
+    active: true,
+    isPublic: true,
+    autoRenewing: true,
+    intervalCount: 1,
+    name: '幸福夥伴(月繳)',
+    interval: 'month',
+    memberType: {id: 2, startDate: '2019-05-14T00:00:00Z', seq: 2, lookupType: {type: 'MEMBER'}, name: '白金會員'},
+    description: '每個月90元協助澈見幸福營運</br>護持大家學法',
+    priceInfo: 'NT90 元/月'
+    },
+    {
+    id: 'starmusic_test',
+    product: 'starmusic_test',
+    dateCreated: '2019-05-30T17:42:44Z',
+    price: 1080,
+    lastUpdated: '2019-05-30T17:42:44Z',
+    continuePrice: 1080,
+    active: true,
+    isPublic: true,
+    autoRenewing: true,
+    intervalCount: 1,
+    name: '幸福夥伴(年繳)',
+    interval: 'year',
+    memberType: {id: 2, startDate: '2019-05-14T00:00:00Z', seq: 2, lookupType: {type: 'MEMBER'}, name: '白金會員'},
+    description: '每年1080元協助澈見幸福營運</br>護持大家學法',
+    priceInfo: 'NT1080 元/年'
     }
-    // ,
-    // {
-    //   id: '1',
-    //   title: '月費會員',
-    //   desc: '天天享有各種曲風好音樂 隨時隨地輕鬆享有好心情',
-    //   priceInfo: 'NT$100 元/月',
-    // },
-
-    // {
-    //   id: '2',
-    //   title: '白金會員',
-    //   desc: '年費優惠 <del>$1200</del> → $1000  陪伴永久不斷線',
-    //   priceInfo: 'NT$1000 元/年',
-    // },
   ],
   payment: ['credit'],
   monthPayList: [],

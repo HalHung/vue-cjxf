@@ -5,7 +5,13 @@
       :style="{'background-image' : 'url(' + imgCost + ')'}"
     ></div>
     <div class="section-header">
-      <h2 class="text-white">立即享受音樂的陪伴</h2>
+      <h2 class="">為何澈見幸福需要您支持？</h2>
+      <p class="mt-3">一直以來澈見幸福都是堅持作為跟大家一起增上的佛法學習平台，今後依然如此！</p>
+      <p class="mt-3">隨時間過去，看著平台上面的資料、以及使用人數越來越多，我們很隨喜大家能夠一同學法修行。</p>
+      <p class="mt-3">為了提供大家更好用及資料更豐富的學習平台，希望大家能贊助澈見幸福的營運及開發。</p>
+      <p class="mt-3">澈見幸福團隊依然會繼續努力，提供大家免費而且是好用的學法工具。</p>
+      <p class="mt-3">因此澈見幸福提供了贊助項目，讓發心的善友們能夠一起參與營運學習平台的共業，</p>
+      <p class="mt-3">成為護持教法長久住世的助伴，一起為師父、老師的心願努力！</p>
     </div>
     <div class="container container-sm">
 
@@ -31,38 +37,26 @@
             v-html="item.priceInfo"
           ></div>
           <div class="card-footer">
-          
+
             <button
               @click="selectPack(item.id)"
               :disabled="Object.keys(me).length > 0 && me.memberType.id != 1"
               class="btn btn-primary"
             >
               <span v-if="Object.keys(me).length > 0 && me.memberType.id != 1">{{me.memberType.name}} </span>
-              <span v-else>立即體驗</span>
+              <span v-else>立即贊助</span>
             </button>
           </div>
         </div>
       </div>
       <div class="card mt-3">
         <div class="card-body pb-1">
-          <h4>優惠方案</h4>
-          <p>夢蓮花之友，享獨家「年費半價」優惠！</p>
+          <h4>廣告贊助方案</h4>
+          <p>讓您的廣告顯示在澈見幸福上，觸及更多群眾！！</p>
         </div>
         <div class="card-footer">
           <button
             @click="toggleSpecial()"
-            class="btn btn-primary"
-          >點我看更多</button>
-        </div>
-      </div>
-      <div class="card mt-3">
-        <div class="card-body pb-1">
-          <h4>禮物卡專區</h4>
-          <p>Star 心禮卡 暖暖送到你心裡</p>
-        </div>
-        <div class="card-footer">
-          <button
-            @click="toggleGift()"
             class="btn btn-primary"
           >點我看更多</button>
         </div>
@@ -104,7 +98,7 @@ export default {
     toggleBuy () {
       this.$vuedals.open({
         name: 'upgrade',
-        title: '暢聽方案',
+        title: '贊助方案',
         props: {
           planId: this.selected
         },
@@ -112,23 +106,23 @@ export default {
         component: upgrade
       });
     },
-    toggleGift () {
-      this.$vuedals.open({
-        name: 'upgrade',
-        title: 'STAR 心禮卡',
-        props: {
+    // toggleGift () {
+    //   this.$vuedals.open({
+    //     name: 'upgrade',
+    //     title: 'STAR 心禮卡',
+    //     props: {
 
-        },
-         footer: {
-          hidden: true
-        },
-        component: require('./gift').default,
-      });
-    },
+    //     },
+    //      footer: {
+    //       hidden: true
+    //     },
+    //     component: require('./gift').default,
+    //   });
+    // },
     toggleSpecial () {
       this.$vuedals.open({
         name: 'Special',
-        title: '優惠方案',
+        title: '廣告贊助方案',
         props: {
 
         },
@@ -138,20 +132,20 @@ export default {
         component: require('./special').default,
       });
     },
-    toggleLogin (next) {
-       this.$vuedals.open({
-         name: 'login',
-         title: '會員登入',
-         footer: {
-           hidden: true
-         },
-         component: require('@/pages/Account/login-form').default,
-         onDismiss: () => {},
-         onClose: () => {
-           if (next) next();
-         }
-       });
-    },
+    // toggleLogin (next) {
+    //    this.$vuedals.open({
+    //      name: 'login',
+    //      title: '會員登入',
+    //      footer: {
+    //        hidden: true
+    //      },
+    //      component: require('@/pages/Account/login-form').default,
+    //      onDismiss: () => {},
+    //      onClose: () => {
+    //        if (next) next();
+    //      }
+    //    });
+    // },
     selectPack (type) {
       console.log(type);
       var next = this.toggleBuy;
@@ -197,5 +191,12 @@ export default {
   border-top-width: 0;
   text-align: center;
   padding: 1rem 0 3rem;
+}
+
+.section-header {
+  max-width: 760px;
+  margin: 40px auto 0;
+  padding: 3rem 2rem;
+  text-align: unset;
 }
 </style>

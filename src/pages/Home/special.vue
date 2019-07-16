@@ -1,27 +1,16 @@
 <template>
   <div class="gift pt-3 pb-5">
     <h4>
-      若您是夢蓮花文化藝術基金會之友，即可享有STAR MUSIC APP獨家「年費半價」的優惠！
+      透過贊助讓您的廣告以全屏、輪播方式，展示在澈見幸福app
     </h4>
 
     <p class="mt-5">
-      詳請請洽<a
-        href="http://www.dreamlotus.org/index.php "
-        target="_blank"
-      >
-        夢蓮花文化藝術基金會
-      </a>
-      (02)2577-7381</p>
+      詳情請洽 (02)7746-4999#12 林先生</p>
+    <p class="mt-3">
+      Email: jason@luciditv.com</p>
 
     <p class="mt-5">
-      <a
-        class="btn btn-primary"
-        href="http://dreamlotus.eoffering.org.tw"
-        target="_blank"
-      >
-        前往加入夢蓮花之友！
-      </a>
-
+      我們將會為您做介紹詳細介紹！
     </p>
 
   </div>
