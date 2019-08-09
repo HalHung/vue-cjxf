@@ -7,8 +7,8 @@
 
 export default {
   packs: [{
-    id: 'starmusic_test',
-    product: 'starmusic_test',
+    id: 'starmusic_month',
+    product: 'starmusic_month',
     dateCreated: '2019-05-30T17:42:44Z',
     price: 90,
     lastUpdated: '2019-05-30T17:42:44Z',
@@ -24,8 +24,8 @@ export default {
     priceInfo: 'NT90 元/月'
     },
     {
-    id: 'starmusic_test',
-    product: 'starmusic_test',
+    id: 'starmusic_year',
+    product: 'starmusic_year',
     dateCreated: '2019-05-30T17:42:44Z',
     price: 1080,
     lastUpdated: '2019-05-30T17:42:44Z',

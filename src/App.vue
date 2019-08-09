@@ -13,11 +13,12 @@
  *
  * The entry point of the application
  */
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+// import * as firebase from 'firebase/app';
+// import 'firebase/auth';
+// import 'firebase/firestore';
 import { Component as Vuedal } from 'vuedals-submit';
 // Your web app's Firebase configuration
+/*
 var firebaseConfig = {
   apiKey: 'AIzaSyBBLTBG-BHF71ihDWgIYbxNglG5j_VKfzU',
   authDomain: 'star-music-9e086.firebaseapp.com',
@@ -29,6 +30,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+*/
 export default {
   /**
    * The name of the application.
@@ -41,15 +43,18 @@ export default {
     this.$store.dispatch('global/resetPayList', null, {
       root: true
     });
-    const myself = this;
+    // const myself = this;
     // firebase.auth().useDeviceLanguage()
+    /*
     firebase.auth().onAuthStateChanged(function (user) {
       console.log(user);
       myself.$store.dispatch('auth/status', null, {
         root: true
       });
     })
+    */
     /* eslint-disable  */
+    /*
     window.fbAsyncInit = function() {
       window.FB.init({
         appId: '213526259398893',
@@ -70,6 +75,7 @@ export default {
       js.src = '//connect.facebook.net/zh_TW/sdk.js';
       fjs.parentNode.insertBefore(js, fjs);
     })(document, 'script', 'facebook-jssdk');
+    */
   }
 };
 </script>

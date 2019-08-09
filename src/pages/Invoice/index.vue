@@ -56,12 +56,13 @@
 import banner from '@/pages/_part/banner';
 import VLayout from '@/layouts/Default';
 import { mapGetters } from 'vuex';
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+// import * as firebase from 'firebase/app';
+// import 'firebase/auth';
+// import 'firebase/firestore';
 export default {
     name: 'invoice-index',
     created () {
+        /*
         const myself = this;
         firebase.auth().onAuthStateChanged(function (user) {
             console.log(user);
@@ -69,6 +70,7 @@ export default {
             root: true
         });
         })
+        */
     },
     computed: {
         ...mapGetters({

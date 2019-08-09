@@ -5,14 +5,15 @@
     <i class="fa fa-facebook"></i> 以 Facebook 帳戶登入 </a>
 </template>
 <script>
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+// import * as firebase from 'firebase/app';
+// import 'firebase/auth';
+// import 'firebase/firestore';
 export default {
 
   name: 'fa-login',
   methods: {
     submit () {
+      /*
       let vm = this
       var provider = new firebase.auth.FacebookAuthProvider();
       provider.addScope('public_profile');
@@ -41,6 +42,7 @@ export default {
           type: 'error'
         })
       });
+      */
       /*
       window.FB.login(function (response) {
         if (response.status === 'connected') {

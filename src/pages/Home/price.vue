@@ -150,11 +150,11 @@ export default {
       console.log(type);
       var next = this.toggleBuy;
       this.selected = type;
-      if (!this.isAuth) {
-        this.toggleLogin(this.selected === 'normal' ? null : next);
-      } else {
+      // if (!this.isAuth) {
+      //   this.toggleLogin(this.selected === 'normal' ? null : next);
+      // } else {
         next();
-      }
+      // }
     }
   }
 };

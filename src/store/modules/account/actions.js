@@ -8,10 +8,11 @@
 
 import API from '@/api/';
 import { Message } from 'element-ui'
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+// import * as firebase from 'firebase/app';
+// import 'firebase/auth';
+// import 'firebase/firestore';
 export const reqResetPassword = ({ commit }, { email }) => {
+  /*
   return firebase.auth().sendPasswordResetEmail(email).then(function () {
     Message({
       message: '重設密碼連結已經寄出，請檢察你的EMAIL並按指示操作。',
@@ -23,6 +24,7 @@ export const reqResetPassword = ({ commit }, { email }) => {
       type: 'error'
     })
   })
+  */
 }
 export const resetPassword = ({ commit }, { pw, token }) => {
   return new Promise((resolve, reject) => {

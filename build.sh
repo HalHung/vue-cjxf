@@ -1,3 +1,3 @@
 #!/bin/bash
-docker build -t asia.gcr.io/star-music-239510/star-music-www:0.0.16 .
-docker push asia.gcr.io/star-music-239510/star-music-www:0.0.16
+docker build -t asia.gcr.io/luciditv-bot/cjxf-www:0.0.4 .
+docker push asia.gcr.io/luciditv-bot/cjxf-www:0.0.4

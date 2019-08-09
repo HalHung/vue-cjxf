@@ -10,9 +10,9 @@
 // import store from '@/store';
 import * as types from './mutation-types';
 import API from '@/api/';
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+// import * as firebase from 'firebase/app';
+// import 'firebase/auth';
+// import 'firebase/firestore';
 import {
   Message
 } from 'element-ui'
@@ -22,6 +22,7 @@ export const status = ({
   dispatch
 }) => {
   commit(types.SET_AUTH_CHECKING);
+  /*
   if (firebase.auth().currentUser) {
     return new Promise((resolve, reject) => {
       API.auth.status().then(res => {
@@ -42,7 +43,7 @@ export const status = ({
     commit(types.SET_AUTH_CHECKED);
     console.log('no token');
   }
-
+  */
   // commit(types.status);
 };
 
@@ -87,6 +88,7 @@ export const login = ({
   password
 }) => {
   return new Promise((resolve, reject) => {
+    /*
     firebase.auth().signInWithEmailAndPassword(email, password).then(function (userCredential) {
       if (userCredential.user.emailVerified) {
         Message({
@@ -113,6 +115,7 @@ export const login = ({
       })
       reject(reason);
     });
+    */
   });
   /*
   return new Promise((resolve, reject) => {
@@ -195,6 +198,7 @@ export const logout = ({
   commit,
   dispatch
 }) => {
+  /*
   firebase.auth().signOut().then(() => {
     Message({
       message: '成功登出',
@@ -203,6 +207,7 @@ export const logout = ({
     })
     commit(types.REMOVE_AUTH);
   });
+  */
   /*
   API.auth.logout({
     email: store.state.auth.me.email

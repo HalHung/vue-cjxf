@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: luciditv-happiness-www
+  name: luciditv-happiness-www
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: luciditv-happiness-www
+  template:
+    metadata:
+      labels:
+        app: luciditv-happiness-www
+    spec:
+      containers:
+      - image: asia.gcr.io/luciditv-bot/cjxf-www:0.0.1
+        name: luciditv-happiness-www

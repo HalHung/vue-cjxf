@@ -1,7 +1,7 @@
 import request from '@/utils/request'
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+// import * as firebase from 'firebase/app';
+// import 'firebase/auth';
+// import 'firebase/firestore';
 function status () {
   return request({
     url: '/memberProfile/webget?expand=memberType',
@@ -18,6 +18,7 @@ function login (params) {
 }
 
 function register (params) {
+  /*
   return firebase.auth().createUserWithEmailAndPassword(params.email, params.password).then(function (userCredential) {
     var promises = [];
     promises.push(userCredential.user.updateProfile({
@@ -30,6 +31,7 @@ function register (params) {
       return userCredential;
     });
   });
+  */
   /*
   return request({
     url: '/memberProfile',

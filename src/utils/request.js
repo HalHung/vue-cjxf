@@ -3,9 +3,9 @@ import {
   Message
 } from 'element-ui'
 // import store from '../store'
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+// import * as firebase from 'firebase/app';
+// import 'firebase/auth';
+// import 'firebase/firestore';
 // import { getToken } from '@/utils/auth'
 
 // 创建axios实例
@@ -19,6 +19,7 @@ const service = axios.create({
 service.interceptors.request.use(config => {
   // config.headers['Content-Type'] = 'multipart/form-data'
   config.headers['Content-Type'] = 'application/json'
+  /*
   if (firebase.auth().currentUser) {
     return firebase.auth().currentUser.getIdToken().then(function (token) {
       config.headers['Authorization'] = token;
@@ -27,6 +28,8 @@ service.interceptors.request.use(config => {
   } else {
     return config;
   }
+  */
+  return config;
 }, error => {
   console.log(error) // for debug
   Promise.reject(error)

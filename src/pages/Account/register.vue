@@ -99,9 +99,9 @@
 import VLayout from '@/layouts/Default';
 import banner from '@/pages/_part/banner';
 import btnFb from '@/components/btn-fb';
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+// import * as firebase from 'firebase/app';
+// import 'firebase/auth';
+// import 'firebase/firestore';
 // import { Progress } from 'element-ui';
 export default {
   name: 'account-index',
@@ -163,12 +163,14 @@ export default {
     },
   },
   created () {
+    /*
     let myself = this;
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
         myself.success();
       }
     })
+    */
   }
 };
 </script>

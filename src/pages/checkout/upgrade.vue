@@ -4,12 +4,53 @@
       v-if="type==='coupon'">
       <h2 class="title">優惠碼 </h2>
       <coupon-input></coupon-input>
-    </div>
-    <h2 class="title mt-5">請選擇方案 </h2>
+    </div> 
+    <h2 class="title mt-5">請選擇方案 </h2> -->
     <paylist v-if="list"
       :selected.sync="form.planId"
-      :list="list"></paylist> -->
+      :list="list"></paylist>
   <el-form ref="checkoutForm" :model="form" :rules="rules">
+      <h2 class="title mt-5">姓名</h2>
+         <el-col :span="11">
+          <el-form-item prop="lastName">
+          <el-input
+            type='text'
+            name="lastName"
+            placeholder="姓"
+            v-model="form.lastName">
+          </el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="2" class="line">/</el-col>
+        <el-col :span="11">
+          <el-form-item prop="firstName">
+          <el-input
+            type='text'
+            name="firstName"
+            placeholder="名"
+            v-model="form.firstName">
+          </el-input>
+          </el-form-item>
+        </el-col>
+      <h2 class="title mt-5">電子信箱</h2>
+      <el-form-item prop="email">
+        <el-input
+            placeholder="請輸入電子信箱"
+            v-model="form.email"
+            name="email"
+            >
+        </el-input>
+      </el-form-item>
+      <h2 class="title mt-5">聯絡電話</h2>
+      <el-form-item prop="phoneNumber">
+        <el-input
+            type="phoneNumber"
+            placeholder="請輸入聯絡電話"
+            v-model="form.phoneNumber"
+            name="phoneNumber"
+            >
+        </el-input>
+      </el-form-item>
     <h2 class="title mt-5">付款方式 </h2>
     <el-radio-group v-model="form.payment">
       <el-radio :label="'credit'">信用卡</el-radio>
@@ -58,11 +99,9 @@
           </el-form-item>
         </el-col>
     </el-form>
-    <!-- <div class="note mt-5">
-      <p class="">使用說明 </p>
-      <p>使用 Google 產品時，您可以匯出及下載帳戶中存放的資料，例如您的電子郵件、日曆和相片。只要幾個簡單步驟，就能建立封存檔案，將這些資料留存備查或提供其他服務使用。</p>
-      <p>注意：下載完成後，您的資料並不會從 Google 伺服器中刪除。瞭解如何刪除您的帳戶或刪除您的搜尋記錄和瀏覽活動。</p>
-    </div> -->
+    <div class="note mt-5">
+      <p>電子發票將捐贈給福智學校財團法人(愛心碼:1025)</p>
+    </div>
   </div>
 </template>
 <script>
@@ -79,6 +118,10 @@ export default {
     return {
       isLoading: false,
       form: {
+        lastName: '',
+        firstName: '',
+        email: '',
+        phoneNumber: '',
         planId: '',
         couponCode: '',
         payment: 'credit',
@@ -89,10 +132,19 @@ export default {
           cvc: ''
         }
       },
-      rules: {
+      lastName: {
+        lastName: [
+          { required: true, message: '請輸入姓', trigger: 'blur' }
+        ],
+        firstName: [
+          { required: true, message: '請輸入名', trigger: 'blur' }
+        ],
+        phoneNumber: [
+          { required: true, message: '請輸聯絡電話', trigger: 'blur' }
+        ],
         email: [
-          { required: true, message: '請輸入會員帳號', trigger: 'blur' },
-          { type: 'email', message: '請輸入正確的會員帳號', trigger: ['blur', 'change'] }
+          { required: true, message: '請輸入電子信箱', trigger: 'blur' },
+          { type: 'email', message: '請輸入正確的電子信箱', trigger: ['blur', 'change'] }
         ],
         'card.number': [
           { required: true, message: '請輸入信用卡號碼', trigger: 'blur' }
