@@ -73,7 +73,7 @@ export default {
 @import "../../assets/scss/custom-bootstrap.scss";
 
 .section-var {
-  background-image: linear-gradient(to right, #f26c22 0%, #ffcf00 100%);
+  background-image: linear-gradient(to right, #1a2445 0%, #4152b5 100%);
   background-repeat: repeat-x;
   img {
     height: 600px;
@@ -89,6 +89,7 @@ export default {
 .para2 {
   max-width: 700px;
   padding-left: 3rem;
+  padding-right: 2rem;
   // margin-right: 200px;
   position: relative;
   background: rgba(0, 0, 0, 0.5);
