@@ -5,7 +5,7 @@
         <div class="col-sm-4">
           <div class="item">
             <i class="fa fa-phone"></i>
-            <p>+ 886 2 7746 4999</p>
+            <p>0931-259-549</p>
           </div>
         </div>
         <div class="col-sm-4">
@@ -17,7 +17,7 @@
         <div class="col-sm-4">
           <div class="item">
             <i class="fa fa-envelope-o"></i>
-            <p>hr@luciditv.com</p>
+            <p>jason@luciditv.com</p>
           </div>
         </div>
       </div>
