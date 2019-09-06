@@ -1,11 +1,11 @@
 <template>
   <div class="gift pt-3 pb-5">
     <h4>
-      透過贊助讓您的廣告以全屏、輪播方式，展示在澈見幸福app
+      透過贊助讓您的廣告以輪播方式，展示在澈見幸福app
     </h4>
 
     <p class="mt-5">
-      詳情請洽 (02)7746-4999#12 林先生</p>
+      詳情請洽 0931-259-549 林先生</p>
     <p class="mt-3">
       Email: jason@luciditv.com</p>
 
