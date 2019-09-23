@@ -11,7 +11,7 @@
         <div class="col-sm-4">
           <div class="item">
             <i class="fa fa-building"></i>
-            <p>105 台北市松山區光復北路68號8樓之1</p>
+            <p>台北市松山區南京東路四段163號5樓</p>
           </div>
         </div>
         <div class="col-sm-4">
