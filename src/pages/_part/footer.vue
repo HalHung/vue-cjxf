@@ -5,7 +5,7 @@
         <div class="col-sm-4">
           <div class="item">
             <i class="fa fa-phone"></i>
-            <p>0931-259-549</p>
+            <p>02-7751-5331 ext.203</p>
           </div>
         </div>
         <div class="col-sm-4">
