@@ -5,9 +5,9 @@
     </h4>
 
     <p class="mt-5">
-      詳情請洽 02-7751-5331 ext.203 林先生</p>
+      詳情請洽 02-7751-5331 ext.203 洪先生</p>
     <p class="mt-3">
-      Email: jason@luciditv.com</p>
+      Email: halhung@luciditv.com</p>
 
     <p class="mt-5">
       我們將會為您做介紹詳細介紹！
