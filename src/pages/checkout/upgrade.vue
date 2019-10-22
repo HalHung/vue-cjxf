@@ -4,7 +4,7 @@
       v-if="type==='coupon'">
       <h2 class="title">優惠碼 </h2>
       <coupon-input></coupon-input>
-    </div> 
+    </div>
     <h2 class="title mt-5">請選擇方案 </h2> -->
     <paylist v-if="list"
       :selected.sync="form.planId"
@@ -132,7 +132,7 @@ export default {
           cvc: ''
         }
       },
-      lastName: {
+      rules: {
         lastName: [
           { required: true, message: '請輸入姓', trigger: 'blur' }
         ],
