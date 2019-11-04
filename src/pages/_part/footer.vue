@@ -17,7 +17,7 @@
         <div class="col-sm-4">
           <div class="item">
             <i class="fa fa-envelope-o"></i>
-            <p>halhung@luciditv.com</p>
+            <p>jason@luciditv.com</p>
           </div>
         </div>
       </div>
