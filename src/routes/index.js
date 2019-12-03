@@ -13,6 +13,12 @@ export default [
       import('@/pages/Invoice/index')
   },
   {
+    path: '/invoice/:no',
+    name: 'invoice.showByNo',
+    component: () =>
+      import('@/pages/Invoice/showByNo')
+  },
+  {
     path: '/checkout/token',
     name: 'checkout.token',
     component: () =>

@@ -58,8 +58,10 @@ import './assets/stylus/app.styl';
 
 import App from './App';
 import store from './store';
+import VueTelInput from 'vue-tel-input';
 // 路由設定
 import '@/permission';
+Vue.use(VueTelInput);
 Vue.config.productionTip = false;
 /* eslint-disable  */
 new Vue({

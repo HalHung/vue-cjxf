@@ -8,7 +8,10 @@
 export const invoiceList = (state) => {
   return state.invoiceList
 }
-
+export const invoice = (state) => {
+  return state.invoice
+}
 export default {
-  invoiceList
+  invoiceList,
+  invoice
 }

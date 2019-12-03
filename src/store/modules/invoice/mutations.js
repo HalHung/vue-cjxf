@@ -1,8 +1,7 @@
 import {
-
   SET_INVOICELIST,
-  RESET_INVOICELIST
-
+  RESET_INVOICELIST,
+  SET_INVOICE
 } from './mutation-types';
 
 export default {
@@ -17,5 +16,10 @@ export default {
     state['invoiceList'] = [
       ...items
     ]
+  },
+  [SET_INVOICE] (state, {
+    item
+  }) {
+    state['invoice'] = item;
   }
 };

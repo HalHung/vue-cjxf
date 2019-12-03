@@ -10,7 +10,7 @@
       :selected.sync="form.planId"
       :list="list"></paylist>
   <el-form ref="checkoutForm" :model="form" :rules="rules">
-      <h2 class="title mt-5">姓名</h2>
+      <h2 class="title mt-1">姓名</h2>
          <el-col :span="11">
           <el-form-item prop="lastName">
           <el-input
@@ -32,26 +32,29 @@
           </el-input>
           </el-form-item>
         </el-col>
-      <h2 class="title mt-5">電子信箱</h2>
+      <h2 class="title mt-1">電子信箱</h2>
       <el-form-item prop="email">
         <el-input
             placeholder="請輸入電子信箱"
             v-model="form.email"
             name="email"
             >
+
         </el-input>
       </el-form-item>
-      <h2 class="title mt-5">聯絡電話</h2>
+      <h2 class="title mt-1">聯絡電話</h2>
       <el-form-item prop="phoneNumber">
-        <el-input
+        <vue-tel-input @input="onPhoneInput" placeholder="請輸入聯絡電話"  name="phoneNumber" v-bind="bindProps"></vue-tel-input>
+        <!-- <el-input
             type="phoneNumber"
             placeholder="請輸入聯絡電話"
             v-model="form.phoneNumber"
             name="phoneNumber"
             >
         </el-input>
+         -->
       </el-form-item>
-    <h2 class="title mt-5">付款方式 </h2>
+    <h2 class="title mt-1">付款方式 </h2>
     <el-radio-group v-model="form.payment">
       <el-radio :label="'credit'">信用卡</el-radio>
       <!-- <el-radio :label="'atm'">ATM</el-radio> -->
@@ -62,7 +65,8 @@
             name='cardnumber'
             autocompletetype="cc-number"
             placeholder="請輸入信用卡號碼"
-            v-model="form.card.number">
+            v-model="cardNumber">
+            <i slot="prefix" class="fab fa-lg" v-bind:class=[ccClass]></i>
           </el-input>
       </el-form-item>
 
@@ -72,7 +76,8 @@
             type='tel'
             name="ccmonth"
             placeholder="MM"
-            v-model="form.card.expMonth">
+            maxlength="2"
+            v-model="cardMonth">
           </el-input>
           </el-form-item>
         </el-col>
@@ -83,7 +88,8 @@
             type='tel'
             name="ccyear"
             placeholder="YY"
-            v-model="form.card.expYear">
+            maxlength="2"
+            v-model="cardYear">
           </el-input>
           </el-form-item>
         </el-col>
@@ -93,8 +99,9 @@
           <el-input
             type='tel'
             name="cvc"
-            placeholder="CVC"
-            v-model="form.card.cvc" show-password>
+            :placeholder="cvcName"
+            :maxlength="cvcSize"
+            v-model="cardCvc">
           </el-input>
           </el-form-item>
         </el-col>
@@ -111,17 +118,27 @@ import API from '@/api/';
 import {
   Message
 } from 'element-ui';
+import creditCardType, { getTypeInfo } from 'credit-card-type';
+
 // import { mapGetters } from 'vuex';
 // import API from '@/api/';
 export default {
   data () {
     return {
+      ccClass: '',
+      cvcName: 'CVC',
+      cvcSize: 4,
       isLoading: false,
+      bindProps: {
+        preferredCountries: ['CA', 'TW', 'CN', 'US', 'JP', 'KR', 'HK', 'SG', 'MY', 'IN', 'VN']
+      },
       form: {
         lastName: '',
         firstName: '',
         email: '',
         phoneNumber: '',
+        phoneCountryCode: '',
+        phoneValid: '',
         planId: '',
         couponCode: '',
         payment: 'credit',
@@ -129,7 +146,8 @@ export default {
           number: '',
           expYear: '',
           expMonth: '',
-          cvc: ''
+          cvc: '',
+          type: ''
         }
       },
       rules: {
@@ -169,10 +187,55 @@ export default {
   computed: {
     list () {
       let data = this.$store.getters[`global/payList`].filter(plan => plan.id === this.planId);
-
       if (!data[0]) return;
       this.form.planId = this.planId;
       return data;
+    },
+    cardNumber: {
+      get () {
+        if (this.form.card.type) {
+          return this.prettyCardNumber(this.form.card.number, this.form.card.type);
+        } else {
+          return this.form.card.number;
+        }
+      },
+      set (value) {
+        const self = this;
+        this.form.card.number = value.replace(/\D/g, '');
+        creditCardType(this.form.card.number).filter(function (card) {
+          self.form.card.type = card.type;
+          self.ccClass = `fa-cc-${card.type === 'american-express' ? 'amex' : card.type}`;
+          self.cvcName = card.code.name;
+          self.cvcSize = card.code.size;
+        });
+      }
+    },
+    cardMonth: {
+      get () {
+        return this.form.card.expMonth;
+      },
+      set (value) {
+        const temp = value.replace(/\D/g, '');
+        if (temp === '' | parseInt(temp) <= 12 && temp !== '00') {
+          this.form.card.expMonth = temp;
+        }
+      }
+    },
+    cardYear: {
+      get () {
+        return this.form.card.expYear;
+      },
+      set (value) {
+        this.form.card.expYear = value.replace(/\D/g, '');
+      }
+    },
+    cardCvc: {
+      get () {
+        return this.form.card.cvc;
+      },
+      set (value) {
+        this.form.card.cvc = value.replace(/\D/g, '');
+      }
     }
   },
   props: {
@@ -184,43 +247,70 @@ export default {
     planId: null
   },
   methods: {
+    onPhoneInput (formattedNumber, { number, valid, country }) {
+        this.form.phoneNumber = number.international;
+        this.form.phoneCountryCode = country.iso2;
+        this.form.phoneValid = valid;
+    },
+    prettyCardNumber (cardNumber, cardType) {
+      var card = getTypeInfo(cardType);
+
+      if (card) {
+        var offsets = [].concat(0, card.gaps, cardNumber.length);
+        var components = [];
+
+        for (var i = 0; offsets[i] < cardNumber.length; i++) {
+          var start = offsets[i];
+          var end = Math.min(offsets[i + 1], cardNumber.length);
+          components.push(cardNumber.substring(start, end));
+        }
+
+        return components.join(' ');
+      }
+
+      return cardNumber;
+    },
     submit () {
      const myself = this;
       this.$refs['checkoutForm'].validate((valid) => {
           if (valid) {
             myself.isLoading = true;
             API.checkout.subscription(this.form).then(function (res) {
-              console.log(res);
               myself.isLoading = false;
               let plan = myself.list[0];
-              if (res.data.status === 'SUCCESS') {
+              if (res.data.status === 'SUCCESS' && res.data.message === '授權成功') {
                 myself.$vuedals.close();
                 Message({
                   message: `刷卡成功！ 您已成功購買 ${plan.name}！`,
                   type: 'success',
-                  duration: 3 * 1000
+                  duration: 0,
+                  showClose: true
                 })
                 myself.$store.dispatch('auth/status', null, {
                   root: true
                 });
+              } else if (res.data.Status === 'SUCCESS' && res.data.Message === '成功取得3D HTML') {
+                var body = res.data.Result;
+                document.body.innerHTML = body;
+                document.forms[0].submit();
               } else {
                 Message({
                   message: `刷卡失敗，請確認信用卡相關資訊。[${res.data.message}]`,
                   type: 'error',
-                  duration: 3 * 1000
+                  duration: 0,
+                  showClose: true
                 })
               }
             }).catch(function (reason) {
-              console.log(reason);
               myself.isLoading = false;
               Message({
-                message: reason.response.data.message,
+                message: reason.data.message,
                 type: 'error',
-                duration: 3 * 1000
+                duration: 0,
+                showClose: true
               })
             })
           } else {
-            console.log('error submit!!');
             return false;
           }
       });

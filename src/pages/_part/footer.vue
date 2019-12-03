@@ -16,7 +16,7 @@
         </div>
         <div class="col-sm-4">
           <div class="item">
-            <i class="fa fa-envelope-o"></i>
+            <i class="fa fa-envelope"></i>
             <p>jason@luciditv.com</p>
           </div>
         </div>

@@ -6,5 +6,6 @@
  */
 
 export default {
-  invoiceList: []
+  invoiceList: [],
+  invoice: {}
 };

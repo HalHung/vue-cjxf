@@ -158,6 +158,10 @@
   version "0.2.21"
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.2.21.tgz#1116075d3d821e058a8c321385552c51fa3a6680"
 
+"@fortawesome/fontawesome-free@^5.11.2":
+  version "5.11.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.11.2.tgz#8644bc25b19475779a7b7c1fc104bc0a794f4465"
+
 "@grpc/proto-loader@^0.5.0":
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@grpc/proto-loader/-/proto-loader-0.5.1.tgz#48492b53cdda353110b51a4b02f465974729c76f"
@@ -559,6 +563,10 @@ autoprefixer@^7.1.2:
     num2fraction "^1.2.2"
     postcss "^6.0.17"
     postcss-value-parser "^3.2.3"
+
+awesome-phonenumber@^2.15.0:
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-2.21.0.tgz#9996f4576254f4fc4b8b7ce0803ad116dbb49c73"
 
 aws-sign2@~0.7.0:
   version "0.7.0"
@@ -2031,6 +2039,10 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+credit-card-type@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/credit-card-type/-/credit-card-type-8.3.0.tgz#f93c187c9362411544158c91d552efcc443aa87a"
+
 cross-env@^5.0.1:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.2.0.tgz#6ecd4c015d5773e614039ee529076669b9d126f2"
@@ -3223,10 +3235,6 @@ follow-redirects@^1.0.0, follow-redirects@^1.2.3:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
   dependencies:
     debug "^3.2.6"
-
-font-awesome@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
 
 for-in@^0.1.3:
   version "0.1.8"
@@ -7629,6 +7637,12 @@ vue-style-loader@^3.0.0, vue-style-loader@^3.0.1:
   dependencies:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
+
+vue-tel-input@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/vue-tel-input/-/vue-tel-input-4.0.0.tgz#7f0266e23786f43ce30decd9df5c0ebbcfb41116"
+  dependencies:
+    awesome-phonenumber "^2.15.0"
 
 vue-template-compiler@^2.4.2:
   version "2.6.10"

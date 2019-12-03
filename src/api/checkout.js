@@ -21,7 +21,6 @@ function fetchPay (params) {
   })
 }
 function subscription (params) {
-  console.log(params);
   return request({
     url: '/subscription',
     method: 'post',
@@ -29,7 +28,6 @@ function subscription (params) {
   })
 }
 function pay (params) {
-  console.log(params);
   return request({
     url: '/subscription/pay',
     method: 'post',

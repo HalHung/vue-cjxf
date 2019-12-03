@@ -8,6 +8,14 @@ function fetchInvoiceList (params) {
   })
 }
 
+function fetchInvoice (params) {
+  return request({
+    url: `/invoice/${params.no}?expand=plan`,
+    method: 'get',
+    data: params
+  })
+}
 export default {
-    fetchInvoiceList
+    fetchInvoiceList,
+    fetchInvoice
 }
