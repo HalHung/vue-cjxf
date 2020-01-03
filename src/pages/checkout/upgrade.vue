@@ -161,8 +161,7 @@ export default {
           { required: true, message: '請輸聯絡電話', trigger: 'blur' }
         ],
         email: [
-          { required: true, message: '請輸入電子信箱', trigger: 'blur' },
-          { type: 'email', message: '請輸入正確的電子信箱', trigger: ['blur', 'change'] }
+          { required: true, type: 'email', message: '請輸入正確的電子信箱', trigger: 'blur' }
         ],
         'card.number': [
           { required: true, message: '請輸入信用卡號碼', trigger: 'blur' }
