@@ -10,7 +10,7 @@
       Email: jason@luciditv.com</p>
 
     <p class="mt-5">
-      我們將會為您做介紹詳細介紹！
+      我們將會為您做詳細介紹！
     </p>
 
   </div>
