@@ -280,7 +280,7 @@ export default {
               if (res.data.status === 'SUCCESS' && res.data.message === '授權成功') {
                 myself.$vuedals.close();
                 Message({
-                  message: `刷卡成功！ 您已成功購買 ${plan.name}！`,
+                  message: `刷卡成功！ 您已成功贊助 ${plan.name}！`,
                   type: 'success',
                   duration: 0,
                   showClose: true
