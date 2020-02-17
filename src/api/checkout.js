@@ -27,6 +27,13 @@ function subscription (params) {
     data: params
   })
 }
+function unionpay (params) {
+  return request({
+    url: '/subscription/unionpay',
+    method: 'post',
+    data: params
+  })
+}
 function pay (params) {
   return request({
     url: '/subscription/pay',
@@ -39,5 +46,6 @@ export default {
   fetchPayList,
   fetchPay,
   pay,
-  subscription
+  subscription,
+  unionpay
 }

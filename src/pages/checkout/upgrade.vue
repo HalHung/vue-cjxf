@@ -55,22 +55,25 @@
          -->
       </el-form-item>
     <h2 class="title mt-1">付款方式 </h2>
+
     <el-radio-group v-model="form.payment">
       <el-radio :label="'credit'">信用卡</el-radio>
-      <!-- <el-radio :label="'atm'">ATM</el-radio> -->
+       <el-radio :label="'unionpay'">銀聯卡</el-radio>
     </el-radio-group>
-      <el-form-item prop="card.number">
+
+      <el-form-item prop="card.number" v-if="form.payment=='credit'">
           <el-input
             type='tel'
             name='cardnumber'
             autocompletetype="cc-number"
             placeholder="請輸入信用卡號碼"
-            v-model="cardNumber">
+            v-model="cardNumber"
+            v-if="form.payment=='credit'">
             <i slot="prefix" class="fab fa-lg" v-bind:class=[ccClass]></i>
           </el-input>
       </el-form-item>
 
-        <el-col :span="7">
+        <el-col :span="7" v-if="form.payment=='credit'">
           <el-form-item prop="card.expMonth">
           <el-input
             type='tel'
@@ -81,8 +84,8 @@
           </el-input>
           </el-form-item>
         </el-col>
-        <el-col :span="1" class="line">/</el-col>
-        <el-col :span="7">
+        <el-col :span="1" class="line" v-if="form.payment=='credit'">/</el-col>
+        <el-col :span="7" v-if="form.payment=='credit'">
           <el-form-item prop="card.expYear">
           <el-input
             type='tel'
@@ -93,8 +96,8 @@
           </el-input>
           </el-form-item>
         </el-col>
-        <el-col :span="2">&nbsp;</el-col>
-        <el-col :span="7">
+        <el-col :span="2" v-if="form.payment=='credit'">&nbsp;</el-col>
+        <el-col :span="7" v-if="form.payment=='credit'">
           <el-form-item prop="card.cvc">
           <el-input
             type='tel'
@@ -274,41 +277,59 @@ export default {
       this.$refs['checkoutForm'].validate((valid) => {
           if (valid) {
             myself.isLoading = true;
-            API.checkout.subscription(this.form).then(function (res) {
-              myself.isLoading = false;
-              let plan = myself.list[0];
-              if (res.data.status === 'SUCCESS' && res.data.message === '授權成功') {
-                myself.$vuedals.close();
-                Message({
-                  message: `刷卡成功！ 您已成功贊助 ${plan.name}！`,
-                  type: 'success',
-                  duration: 0,
-                  showClose: true
-                })
-                myself.$store.dispatch('auth/status', null, {
-                  root: true
-                });
-              } else if (res.data.Status === 'SUCCESS' && res.data.Message === '成功取得3D HTML') {
-                var body = res.data.Result;
-                document.body.innerHTML = body;
-                document.forms[0].submit();
+            if (myself.form.payment === 'unionpay') {
+              API.checkout.unionpay(this.form).then(function (res) {
+                myself.isLoading = false;
+                if (res.data.Status === 'SUCCESS' && res.data.Message === '成功取得MPG HTML') {
+                    var body = res.data.Result;
+                    document.body.innerHTML = body;
+                    document.forms[0].submit();
+                } else {
+                  Message({
+                      message: `刷卡失敗，請確認信用卡相關資訊。[${res.data.Message}]`,
+                      type: 'error',
+                      duration: 0,
+                      showClose: true
+                    })
+                }
+              });
               } else {
-                Message({
-                  message: `刷卡失敗，請確認信用卡相關資訊。[${res.data.message}]`,
-                  type: 'error',
-                  duration: 0,
-                  showClose: true
-                })
-              }
-            }).catch(function (reason) {
-              myself.isLoading = false;
-              Message({
-                message: reason.data.message,
-                type: 'error',
-                duration: 0,
-                showClose: true
-              })
-            })
+              API.checkout.subscription(this.form).then(function (res) {
+                  myself.isLoading = false;
+                  let plan = myself.list[0];
+                  if (res.data.status === 'SUCCESS' && res.data.message === '授權成功') {
+                    myself.$vuedals.close();
+                    Message({
+                      message: `刷卡成功！ 您已成功贊助 ${plan.name}！`,
+                      type: 'success',
+                      duration: 0,
+                      showClose: true
+                    })
+                    myself.$store.dispatch('auth/status', null, {
+                      root: true
+                    });
+                  } else if (res.data.Status === 'SUCCESS' && res.data.Message === '成功取得3D HTML') {
+                    var body = res.data.Result;
+                    document.body.innerHTML = body;
+                    document.forms[0].submit();
+                  } else {
+                    Message({
+                      message: `刷卡失敗，請確認信用卡相關資訊。[${res.data.message}]`,
+                      type: 'error',
+                      duration: 0,
+                      showClose: true
+                    })
+                  }
+                }).catch(function (reason) {
+                  myself.isLoading = false;
+                  Message({
+                    message: reason.data.message,
+                    type: 'error',
+                    duration: 0,
+                    showClose: true
+                  })
+                });
+            }
           } else {
             return false;
           }

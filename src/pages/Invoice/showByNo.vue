@@ -107,7 +107,7 @@ export default {
           } else if (self.status === 'SUCCESS' && self.message === '授權成功') {
               self.route2('home.index');
               Message({
-                message: `刷卡成功！ 您已成功購買 ${self.plan.name}！`,
+                message: `刷卡成功！ 您已成功贊助 ${self.plan.name}！`,
                 type: 'success',
                 duration: 0,
                 showClose: true

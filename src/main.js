@@ -27,7 +27,6 @@ import './plugins/bootstrap';
 import './plugins/font-awesome';
 import './plugins/vue-validate';
 import './plugins/vue-scrollto';
-import './plugins/VueYouTubeEmbed';
 import './plugins/vue-ls';
 import './plugins/Vuedals';
 
