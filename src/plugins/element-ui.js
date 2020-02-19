@@ -28,10 +28,12 @@ import {
   Input,
   Form,
   FormItem,
-  Col
+  Col,
+  Alert
   // Dialog
 
 } from 'element-ui';
+Vue.use(Alert);
 Vue.use(Table);
 Vue.use(TableColumn);
 Vue.use(Loading.directive);

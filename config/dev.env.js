@@ -4,5 +4,5 @@ var prodEnv = require('./prod.env');
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
   BASE: '"/"',
-  API_LOCATION: '"http://127.0.0.1:8080/api"',
+  API_LOCATION: '"https://api.happiness.luciditv.com/api"',
 });

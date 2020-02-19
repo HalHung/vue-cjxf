@@ -57,10 +57,16 @@
     <h2 class="title mt-1">付款方式 </h2>
 
     <el-radio-group v-model="form.payment">
-      <el-radio :label="'credit'">信用卡</el-radio>
-       <el-radio :label="'unionpay'">銀聯卡</el-radio>
+      <el-radio :label="'credit'">信用卡( Visa, Mastercard, JCB )</el-radio>
+       <el-radio :label="'unionpay'">銀聯卡( 信用卡, 儲蓄卡, 中銀通卡)</el-radio>
     </el-radio-group>
-
+    <el-alert
+        class="mt-1"
+        v-if="form.payment=='unionpay'"
+        title="本次為單筆交易，無定期定額扣款。"
+        type="warning"
+        show-icon>
+      </el-alert>
       <el-form-item prop="card.number" v-if="form.payment=='credit'">
           <el-input
             type='tel'
@@ -127,6 +133,22 @@ import creditCardType, { getTypeInfo } from 'credit-card-type';
 // import API from '@/api/';
 export default {
   data () {
+     var validateCardType = (rule, value, callback) => {
+        if (this.form.card.type) {
+          if (this.form.card.type === 'visa' || this.form.card.type === 'mastercard' || this.form.card.type === 'mastercard') {
+            var card = getTypeInfo(this.form.card.type);
+            if (card.lengths.indexOf(this.form.card.number.length) >= 0) {
+              callback();
+            } else {
+              callback(new Error('請輸入Visa, Mastercard, JCB信用卡'));
+            }
+          } else {
+            callback(new Error('請輸入Visa, Mastercard, JCB信用卡'));
+          }
+        } else {
+          callback();
+        }
+      };
     return {
       ccClass: '',
       cvcName: 'CVC',
@@ -167,7 +189,8 @@ export default {
           { required: true, type: 'email', message: '請輸入正確的電子信箱', trigger: 'blur' }
         ],
         'card.number': [
-          { required: true, message: '請輸入信用卡號碼', trigger: 'blur' }
+          { required: true, message: '請輸入信用卡號碼', trigger: 'blur' },
+          { validator: validateCardType, trigger: 'blur' }
         ],
         'card.expYear': [
           { required: true, message: '請輸入年分', trigger: 'blur' }
