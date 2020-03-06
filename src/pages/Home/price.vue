@@ -4,7 +4,7 @@
       class="bg"
       :style="{'background-image' : 'url(' + imgCost + ')'}"
     ></div>
-    <div class="section-header">
+    <!-- <div class="section-header">
       <h2 class="">為何澈見幸福需要您支持？</h2>
       <p class="mt-3">一直以來澈見幸福都是堅持作為跟大家一起增上的佛法學習平台，今後依然如此！</p>
       <p class="mt-3">隨時間過去，看著平台上面的資料、以及使用人數越來越多，我們很隨喜大家能夠一同學法修行。</p>
@@ -12,7 +12,7 @@
       <p class="mt-3">澈見幸福團隊依然會繼續努力，提供大家免費而且是好用的學法工具。</p>
       <p class="mt-3">因此澈見幸福提供了贊助項目，讓發心的善友們能夠一起參與營運學習平台的共業，</p>
       <p class="mt-3">成為護持教法長久住世的助伴，一起為師父、老師的心願努力！</p>
-    </div>
+    </div> -->
     <div class="container container-sm">
 
       <div class="card-deck">
@@ -32,24 +32,30 @@
               v-html="item.description"
             ></p>
           </div>
-          <div
-            class="card-body"
-            v-html="item.priceInfo"
-          ></div>
+          <div class="card-body">
+            {{item.priceInfo}}
+              <button class="btn btn-primary" @click="amount=100">100元</button>
+              <button class="btn btn-primary" @click="amount=300">300元</button>
+              <button class="btn btn-primary" @click="amount=500">500元</button>
+              <button class="btn btn-primary" @click="amount=1000">1000元</button>
+          </div>
           <div class="card-footer">
+
+
 
             <button
               @click="selectPack(item.id)"
-              :disabled="Object.keys(me).length > 0 && me.memberType.id != 1"
               class="btn btn-primary"
+              :disabled = "amount == null"
             >
-              <span v-if="Object.keys(me).length > 0 && me.memberType.id != 1">{{me.memberType.name}} </span>
-              <span v-else>立即贊助</span>
+              <span v-if="amount == null">立即支持</span>
+              <span v-else>立即支持{{amount}}元</span>
+
             </button>
           </div>
         </div>
       </div>
-      <div class="card mt-3">
+      <!-- <div class="card mt-3">
         <div class="card-body pb-1">
           <h4>廣告贊助方案</h4>
           <p>讓您的廣告顯示在澈見幸福上，觸及更多群眾！！</p>
@@ -60,7 +66,7 @@
             class="btn btn-primary"
           >點我看更多</button>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -74,7 +80,8 @@ export default {
   name: 'price',
   data () {
     return {
-      selected: null
+      selected: null,
+      amount: null
     };
   },
   computed: {
@@ -98,9 +105,10 @@ export default {
     toggleBuy () {
       this.$vuedals.open({
         name: 'upgrade',
-        title: '贊助方案',
+        title: '信用卡授權',
         props: {
-          planId: this.selected
+          planId: this.selected,
+          amount: this.amount
         },
 
         component: upgrade
@@ -163,6 +171,7 @@ export default {
 @import "../../assets/scss/custom-bootstrap.scss";
 .card {
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .card-header {
   background: transparent;

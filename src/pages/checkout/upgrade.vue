@@ -1,11 +1,5 @@
 <template>
   <div v-loading.fullscreen.lock="isLoading">
-    <!-- <div class="form"
-      v-if="type==='coupon'">
-      <h2 class="title">優惠碼 </h2>
-      <coupon-input></coupon-input>
-    </div>
-    <h2 class="title mt-5">請選擇方案 </h2> -->
     <paylist v-if="list"
       :selected.sync="form.planId"
       :list="list"></paylist>
@@ -60,13 +54,13 @@
       <el-radio :label="'credit'">信用卡( Visa, Mastercard, JCB )</el-radio>
        <el-radio :label="'unionpay'">銀聯卡( 信用卡, 儲蓄卡, 中銀通卡)</el-radio>
     </el-radio-group>
-    <el-alert
+    <!-- <el-alert
         class="mt-1"
         v-if="form.payment=='unionpay'"
         title="本次為單筆交易，無定期定額扣款。"
         type="warning"
         show-icon>
-      </el-alert>
+      </el-alert> -->
       <el-form-item prop="card.number" v-if="form.payment=='credit'">
           <el-input
             type='tel'
@@ -266,10 +260,11 @@ export default {
   props: {
     type: {
       default: '',
-      type: String
+      type: String,
     },
     title: null,
-    planId: null
+    planId: null,
+    amount: null
   },
   methods: {
     onPhoneInput (formattedNumber, { number, valid, country }) {
