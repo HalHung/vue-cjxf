@@ -6,7 +6,7 @@
     <template slot="body">
       <div class="section-var section text-white">
         <div class="container ">
-          <!-- <div class="row">
+          <div class="row">
             <div class="col-md-6">
               <div class="para clearfix">
                 <h3>三大功能 </h3>
@@ -17,12 +17,12 @@
             </div>
             <div class="col-md-6"><img src="@/assets/img/index_headset.png"
                 alt=""></div>
-          </div> -->
+          </div>
         </div>
       </div>
       <vis></vis>
       <!-- <music></music> -->
-      <!-- <div class="section-surprise section  text-white px-5 py-5">
+      <div class="section-surprise section  text-white px-5 py-5">
         <div class="bg"
           :style="{'background-image' : 'url(' + imgSurprise + ')'}"></div>
         <div class="py-5 para2 clearfix">
@@ -34,7 +34,7 @@
             <p class="mt-3">- 收藏最愛：依照自己的喜好收藏，幫助您隨時隨地都能精進用功，而且最新上架的內容也會即時通知您，跟著幸福走！</p>
             <p class="mt-3">- 聚沙成塔：業已造不失壞，直播不在現場也可以回饋心得，供養師長！</p>
         </div>
-      </div> -->
+      </div>
       <price id="price-section"></price>
 
     </template>

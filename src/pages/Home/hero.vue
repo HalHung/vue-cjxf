@@ -4,21 +4,26 @@
       :style="{'background-image' : 'url(' + imgHero + ')'}"></div>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 offset-md-1">
+        <div class="col-md-5 offset-md-1">
           <div class="para">
-            <div class="mt-md-1"> <img src="@/assets/img/index_slogan.png"
+            <div class="mt-md-5"> <img src="@/assets/img/index_slogan.png"
                 alt=""> </div>
+            <button v-scroll-to="'#price-section'"
+              class="mt-3 btn btn-primary btn-block"> 立即支持  澈見幸福 </button>
             <div class="row mt-3">
-              <div class="col content">
-                <p>面對新型冠狀病毒疫情，衝擊研討班學習。在僧團的指導下，澈見團隊3天內完成「澈見線上教室系統」並持續優化，提供給廣大的學員，確保學習不中斷。</p>
-                <p>系統3/1上線每天有近500個班級、<br>
-                超過1萬人一起在線上學習廣論，並陸續增加中。</p>
-                <p>因此每個月增加十多萬元的支出，歡迎大家支持與隨喜！
-                </p>
+              <div class="col">
+                <a target="_blank"
+                  href="https://play.google.com/store/apps/details?id=com.luciditv.xfzhi&hl"
+                  class=" btn-img"><img src="@/assets/img/download-app.png"
+                    alt=""></a>
+              </div>
+              <div class="col">
+                <a target="_blank"
+                  href="https://apps.apple.com/tw/app/%E6%BE%88%E8%A6%8B%E5%B9%B8%E7%A6%8F/id1332575155"
+                  class=" btn-img"><img src="@/assets/img/download-ios.png"
+                    alt=""></a>
               </div>
             </div>
-            <button v-scroll-to="'#price-section'"
-              class="mt-3 btn btn-primary btn-block"> 立即支持 線上教室 </button>
           </div>
         </div>
       </div>
@@ -40,27 +45,14 @@ export default {
 
 .hero {
   position: relative;
-  height: 800px;
+  height: 600px;
   overflow: hidden;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-  p{
-    font-size: 18px;
-  }
 
   .para {
     margin-top: 150px;
   }
   img {
-    // max-width: 80%;
-    width: 300px;
-  }
-  .content{
-    color: white;
-  }
-  .btn{
-    background: #e89300;
-    border-color: #e89300;
+    max-width: 100%;
   }
   @include media-breakpoint-down(sm) {
     .para {

@@ -29,10 +29,12 @@ import {
   Form,
   FormItem,
   Col,
-  Alert
+  Alert,
+  InputNumber
   // Dialog
 
 } from 'element-ui';
+Vue.use(InputNumber)
 Vue.use(Alert);
 Vue.use(Table);
 Vue.use(TableColumn);

@@ -1,14 +1,22 @@
 <template>
   <div class="section clearfix">
     <div class="grid-container ">
+      <!-- <div class="grid-item grid-item-1">
+        <div class="bg"
+          :style="{'background-image' : 'url(' + img2 + ')'}"></div>
+      </div>
+      <div class="grid-item grid-item-2">
+        <div class="bg"
+          :style="{'background-image' : 'url(' + img3 + ')'}"></div>
+      </div> -->
       <div class="grid-item grid-item-3"
         alt="">
         <div class="bg"
           :style="{'background-image' : 'url(' + img1 + ')'}">
           <div class="para">
             <h3>「一人走一萬步，不如一萬人走一步」 </h3>
-            <p class="mt-5">增上需要靠一群人共同努力。</p>
-            <p class="mt-3">面對現前疫情嚴峻、未來充滿變數，號召志同道合的朋友一起跟著善知識，在逆境中創造增上學習環境。</p>
+            <p class="mt-5">能增上的日子都是好日子！</p>
+            <p class="mt-3">澈見幸福提供您一個絕佳的學習平台！<br> <br> 增上需要靠一群人，號召有志同道合的朋友，現在就開始建立無限生命的幸福計劃，大家一起成佛吧！</p>
           </div>
         </div>
       </div>
@@ -53,9 +61,8 @@ export default {
 <style lang="scss" scoped>
 @import "~bootstrap/scss/bootstrap";
 .section {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   .grid-container {
-    height: 600px;
+    height: 500px;
     img {
       max-width: 100%;
     }
@@ -78,11 +85,10 @@ export default {
       padding: 5rem;
       .para {
         max-width: 600px;
-        margin: 100px auto 0;
+        margin: 40px auto 0;
         padding: 3rem 2rem;
         color: #fff;
-        font-size: 18px;
-        // background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.5);
       }
     }
 
@@ -100,11 +106,6 @@ export default {
         grid-column: 1 / span 2;
         grid-row: 1 / span 2;
         padding: 1rem;
-        .bg{
-          display:flex;
-          align-items:center;
-          justify-content:center;
-        }
         .para {
           margin: 0px auto;
           padding: 2rem 2rem;
