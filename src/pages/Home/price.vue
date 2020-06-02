@@ -60,7 +60,7 @@
         </div>
         <div class="card-footer">
             <button
-              @click="selectPack(item.id)"
+              @click="selectPack('happiness')"
               class="btn btn-primary"
               :disabled = "amount == null"
             >

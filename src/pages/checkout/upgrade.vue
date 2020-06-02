@@ -161,6 +161,7 @@ export default {
         planId: '',
         couponCode: '',
         payment: 'credit',
+        amount: null,
         card: {
           number: '',
           expYear: '',
@@ -205,7 +206,7 @@ export default {
 
   computed: {
     list () {
-      let data = this.$store.getters[`global/payList`].filter(plan => plan.id === this.planId);
+      let data = this.$store.getters[`global/allpacks`].filter(plan => plan.id === this.planId);
       if (!data[0]) return;
       this.form.planId = this.planId;
       return data;
@@ -295,6 +296,7 @@ export default {
       this.$refs['checkoutForm'].validate((valid) => {
           if (valid) {
             myself.isLoading = true;
+            this.form.amount = this.amount;
             if (myself.form.payment === 'unionpay') {
               API.checkout.unionpay(this.form).then(function (res) {
                 myself.isLoading = false;

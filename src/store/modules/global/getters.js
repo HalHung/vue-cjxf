@@ -7,7 +7,13 @@
  */
 export const packs = (state) => {
   return [
-    ...state.packs,
+    ...state.packs.filter(p => p.isPublic),
+    // ...state.totalPayList
+  ]
+}
+export const allpacks = (state) => {
+  return [
+    ...state.packs
     // ...state.totalPayList
   ]
 }
@@ -30,5 +36,6 @@ export default {
   monthPayList,
   yearPayList,
   couponPayList,
-  payList
+  payList,
+  allpacks
 }

@@ -40,9 +40,9 @@ export default {
     Vuedal
   },
   created () {
-    this.$store.dispatch('global/resetPayList', null, {
-      root: true
-    });
+    // this.$store.dispatch('global/resetPayList', null, {
+    //  root: true
+    // });
     // const myself = this;
     // firebase.auth().useDeviceLanguage()
     /*
