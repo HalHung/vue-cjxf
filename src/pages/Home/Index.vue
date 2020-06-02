@@ -4,7 +4,7 @@
       <hero></hero>
     </template>
     <template slot="body">
-      <div class="section-var section text-white">
+      <!-- <div class="section-var section text-white">
         <div class="container ">
           <div class="row">
             <div class="col-md-6">
@@ -19,7 +19,7 @@
                 alt=""></div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- <vis></vis> -->
       <!-- <music></music> -->
       <div class="section-surprise section  text-white px-5 py-5">
@@ -86,6 +86,12 @@ export default {
       margin-top: 20px;
     }
   }
+}
+
+.section-surprise {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
 }
 
 .para2 {
