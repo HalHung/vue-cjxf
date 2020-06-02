@@ -9,19 +9,19 @@ function resolve (dir) {
 }
 
 module.exports = {
-  entry: {
+  entry: { // vue.cli的進入點
     app: './src/main.js'
   },
-  output: {
+  output: { // 輸出
     path: config.build.assetsRoot,
     filename: '[name].js',
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
-  resolve: {
+  resolve: { // 省略附檔名、路徑
     extensions: ['.js', '.vue', '.json'],
-    alias: {
+    alias: { // 路徑縮寫
       'vue$': 'vue/dist/vue.esm.js',
       '$assets': 'vue/src/assets',
       '@': resolve('src'),
@@ -57,7 +57,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 10000, // 10kb 以下的檔案會加縮成 base64
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },

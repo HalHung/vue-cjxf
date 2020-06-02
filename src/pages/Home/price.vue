@@ -4,15 +4,7 @@
       class="bg"
       :style="{'background-image' : 'url(' + imgCost + ')'}"
     ></div>
-    <div class="section-header">
-      <h2 class="">為何澈見幸福需要您支持？</h2>
-      <p class="mt-3">一直以來澈見幸福都是堅持作為跟大家一起增上的佛法學習平台，今後依然如此！</p>
-      <p class="mt-3">隨時間過去，看著平台上面的資料、以及使用人數越來越多，我們很隨喜大家能夠一同學法修行。</p>
-      <p class="mt-3">為了提供大家更好用及資料更豐富的學習平台，希望大家能贊助澈見幸福的營運及開發。</p>
-      <p class="mt-3">澈見幸福團隊依然會繼續努力，提供大家免費而且是好用的學法工具。</p>
-      <p class="mt-3">因此澈見幸福提供了贊助項目，讓發心的善友們能夠一起參與營運學習平台的共業，</p>
-      <p class="mt-3">成為護持教法長久住世的助伴，一起為師父、老師的心願努力！</p>
-    </div>
+
     <div class="container container-sm">
 
       <div class="card-deck">
@@ -82,7 +74,7 @@
       <div class="card mt-3">
         <div class="card-body pb-1">
           <h4>廣告贊助方案</h4>
-          <p>讓您的廣告顯示在澈見幸福上，觸及更多群眾！！</p>
+          <p class="ad">讓您的廣告顯示在澈見幸福上，觸及更多群眾！！</p>
         </div>
         <div class="card-footer">
           <button
@@ -198,6 +190,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../../assets/scss/custom-bootstrap.scss";
+@import "~bootstrap/scss/bootstrap";
 .card {
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -222,6 +215,11 @@ export default {
   font-size: 1.6rem;
   p {
     font-size: 1.2rem;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+        padding: 16px;
+      }
   }
 }
 .card-footer {

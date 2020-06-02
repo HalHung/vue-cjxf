@@ -54,6 +54,10 @@ export default {
   img {
     max-width: 100%;
   }
+
+  .btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
   @include media-breakpoint-down(sm) {
     .para {
       margin-top: 200px;
