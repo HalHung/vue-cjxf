@@ -75,25 +75,31 @@
 
         <el-col :span="7" v-if="form.payment=='credit'">
           <el-form-item prop="card.expMonth">
-          <el-input
+          <!-- <el-input
             type='tel'
             name="ccmonth"
             placeholder="MM"
             maxlength="2"
             v-model="cardMonth">
-          </el-input>
+          </el-input> -->
+          <select class="browser-default custom-select">
+            <option v-for="m in 12" :key="m">{{m}}</option>
+          </select>
           </el-form-item>
         </el-col>
         <el-col :span="1" class="line" v-if="form.payment=='credit'">/</el-col>
         <el-col :span="7" v-if="form.payment=='credit'">
           <el-form-item prop="card.expYear">
-          <el-input
+          <!-- <el-input
             type='tel'
             name="ccyear"
             placeholder="YY"
             maxlength="2"
             v-model="cardYear">
-          </el-input>
+          </el-input> -->
+          <select class="browser-default custom-select">
+            <option v-for="m in 16" :key="m">{{m+20}}</option>
+          </select>
           </el-form-item>
         </el-col>
         <el-col :span="2" v-if="form.payment=='credit'">&nbsp;</el-col>
@@ -367,6 +373,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.custom-select {
+  font-size: 15px;
 }
 </style>
 
