@@ -28,13 +28,14 @@
         </el-col>
       <h2 class="title mt-1">電子信箱</h2>
       <el-form-item prop="email">
-        <el-input
+        <!-- <el-input
             placeholder="請輸入電子信箱"
             v-model="form.email"
             name="email"
             >
 
-        </el-input>
+        </el-input> -->
+        <el-input placeholder="請輸入電子信箱" v-model="formatEmail" name="email"></el-input>
       </el-form-item>
       <h2 class="title mt-1">聯絡電話</h2>
       <el-form-item prop="phoneNumber">
@@ -261,6 +262,14 @@ export default {
       },
       set (value) {
         this.form.card.cvc = value.replace(/\D/g, '');
+      }
+    },
+    formatEmail: {
+      get () {
+        return this.form.email;
+      },
+      set (value) {
+        this.form.email = value.replace(/\s*/g, '');
       }
     }
   },
