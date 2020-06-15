@@ -20,7 +20,7 @@ export default {
     name: '幸福同行(月繳)',
     interval: 'month',
     memberType: {id: 2, startDate: '2019-05-14T00:00:00Z', seq: 2, lookupType: {type: 'MEMBER'}, name: '白金會員'},
-    description: '每個月90元協助澈見幸福營運</br>護持大家學法',
+    description: '每個月NT90元協助澈見幸福營運</br>護持大家學法',
     priceInfo: 'NT90 元/月'
     },
     {
@@ -37,7 +37,7 @@ export default {
     name: '澈見勇士(年繳)',
     interval: 'year',
     memberType: {id: 2, startDate: '2019-05-14T00:00:00Z', seq: 2, lookupType: {type: 'MEMBER'}, name: '白金會員'},
-    description: '每年1080元協助澈見幸福營運</br>護持大家學法',
+    description: '每年NT1080元協助澈見幸福營運</br>護持大家學法',
     priceInfo: 'NT1080 元/年'
     },
     {id: 'happiness',

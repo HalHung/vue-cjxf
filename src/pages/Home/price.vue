@@ -65,7 +65,7 @@
               :disabled = "amount == null"
             >
               <span v-if="amount == null">立即支持</span>
-              <span v-else>立即支持{{amount}}元</span>
+              <span v-else>立即支持NT{{amount}}元</span>
             </button>
 
           </div>
