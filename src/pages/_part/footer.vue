@@ -5,7 +5,7 @@
         <div class="col-sm-4">
           <div class="item">
             <i class="fa fa-phone"></i>
-            <p>02-7751-5331 ext.203</p>
+            <p>02-7751-5331 ext.202</p>
           </div>
         </div>
         <div class="col-sm-4">
@@ -17,13 +17,13 @@
         <div class="col-sm-4">
           <div class="item">
             <i class="fa fa-envelope"></i>
-            <p>jason@luciditv.com</p>
+            <p>support@luciditv.com</p>
           </div>
         </div>
       </div>
     </div>
     <div class="append">
-      <div class="container">© 2019, Lucidity Media Co., Ltd. All Rights Reserved</div>
+      <div class="container">© 2020, Lucidity Media Co., Ltd. All Rights Reserved</div>
     </div>
   </div>
 </template>
