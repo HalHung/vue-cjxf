@@ -84,6 +84,7 @@
             v-model="cardMonth">
           </el-input> -->
           <select class="browser-default custom-select" v-model="cardMonth">
+            <option value="" disabled selected>月</option>
             <option v-for="m in 12" :key="m">{{m}}</option>
           </select>
           </el-form-item>
@@ -99,6 +100,7 @@
             v-model="cardYear">
           </el-input> -->
           <select class="browser-default custom-select" v-model="cardYear">
+            <option value="" disabled selected>年</option>
             <option v-for="m in 16" :key="m">{{m+19}}</option>
           </select>
           </el-form-item>
