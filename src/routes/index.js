@@ -124,6 +124,13 @@ export default [
       guest: true,
     },
   },
+  // // 更換卡號
+  {
+    path: '/change-card',
+    name: 'changeCard',
+    component: () =>
+      import('@/pages/Page/changeCard.vue'),
+  },
   {
     path: '/page/:slug',
     name: 'page',
