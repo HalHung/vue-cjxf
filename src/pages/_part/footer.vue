@@ -1,7 +1,7 @@
 <template>
   <div class="inner">
     <div class="container">
-      <div class="row ">
+      <div class="row">
         <div class="col-sm-4">
           <div class="item">
             <i class="fa fa-phone"></i>
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="append">
-      <div class="container">© 2020, Lucidity Media Co., Ltd. All Rights Reserved</div>
+      <div class="container">© 2021, Lucidity Media Co., Ltd. All Rights Reserved</div>
     </div>
   </div>
 </template>

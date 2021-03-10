@@ -17,6 +17,7 @@ import account from './modules/account';
 import auth from './modules/auth';
 import dialog from './modules/dialog';
 import invoice from './modules/invoice';
+import changeCard from './modules/changeCard';
 
 Vue.use(Vuex);
 
@@ -31,7 +32,8 @@ export default new Vuex.Store({
     auth,
     account,
     dialog,
-    invoice
+    invoice,
+    changeCard
   },
 
   /**
